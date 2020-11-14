@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vending Machine</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css'%}">
+    <script src="{% static 'js/validation.js'%}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="container">
+            <p id="logo">Vending machine</p>
+        </div>
+        <div class="container">
+            <form action="calculations" method="" name="my_form" onsubmit="return validateForm()">
+                <input type="text" name="money" placeholder="Enter amount (e.g 10)"><br>
+                <input type="text" name="item" placeholder="Enter item name"><br>
+                <input class="button" type="submit" value="Buy">
+            </form>
+        </div>
+        <div>
+            {% block content %}
+
+            {% endblock %}
+            <ol>
+                <ul><h5>Price list</h5></ul>
+                <ul>Flake R25.50</ul>
+                <ul>Wispa R30.50</ul>
+                <ul>Crunchie R56.70</ul>
+                <ul>Milky way R35.76</ul>
+                <ul>Boost R18.79</ul>
+            </ol>
+        </div>
+        <div class="container">
+            <img src="{% static 'images/flake.png' %}">
+            <img src="{% static 'images/wispa.png' %}">
+            <img src="{% static 'images/crunchie.png' %}">
+            <img src="{% static 'images/milky_way.png' %}">
+            <img src="{% static 'images/boost.png' %}">
+            
+        </div>
+    </div>
+</body>
+</html>
